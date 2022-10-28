@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+
+    function getComputerChoice() {
+        let randomNumber = Math.floor(Math.random() *3);
+        switch (randomNumber) {
+            case 0:
+                return "Rock";
+                break;
+            case 1:
+                return "Paper";
+                break;
+            case 2:
+                return "Scissors";
+                break;
+        }
+    }
+
+
+    console.log(getComputerChoice());
+
+
+    let computerSelection = getComputerChoice();
+
+    console.log(computerSelection);
+
+
+
+    </script>
+
+
+
+
+
+
+
+    
+</body>
+</html>
