@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+
+        let getPlayerChoice = prompt("Rock, Paper, or Scissors? Choose wisely!");
+
+
+        function getComputerChoice () {
+            let computerChoice = Math.floor(Math.random () *3);
+            switch (computerChoice) {
+                case 0:
+                    return "Rock";
+                    break;
+                case 1:
+                    return "Paper";
+                    break;
+                case 2:
+                    return "Scissor";
+                    break; 
+            }
+        }
+
+
+        function battle(getPlayerChoice, getComputerChoice) {
+            if (getPlayerChoice == "Rock") {
+                if (getComputerChoice == "Rock") {
+                    return tie = "It's a tie! Rock can't beat Rock";
+                } else if (getComputerChoice == "Paper") {
+                    return lose = "You lose! Rock loses to Paper";
+                } else if (getComputerChoice == "Scissor"); {
+                    return win = "You win! Rock beats Scissor";
+                }
+            }
+            else if (getPlayerChoice == "Paper") {
+                if (getComputerChoice == "Paper") {
+                    return tie = "It's a tie! Paper can't beat Paper";
+                } else if (getComputerChoice == "Rock") {
+                    return lose = "You win! Paper beats Rock";
+                } else if (getComputerChoice == "Scissor"); {
+                    return win = "You lose! Paper loses Scissor";
+                }
+            }
+            else if (getPlayerChoice == "Scissor") {
+                if (getComputerChoice == "Scissor") {
+                    return tie = "It's a tie! Scissor can't beat Scissor";
+                } else if (getComputerChoice == "Paper") {
+                    return lose = "You win! Scissor beats Paper";
+                } else if (getComputerChoice == "Scissor"); {
+                    return win = "You lose! Scissor lose Rock";
+                }
+            }
+            else {
+                return "Pick the right choices!";
+            }
+        }
+
+
+        console.log(battle(getPlayerChoice, getComputerChoice));
+
+
+        /*function gameCounter() {
+            for (let i = 0; i < 5 ; i++) {
+                if (battle(getPlayerChoice, computerChoice)) {
+                    return win + i++;
+            } else if (battle(getPlayerChoice, computerChoice)) {
+                    return lose + i++;
+            } else (battle(getPlayerChoice, computerchoice)) {
+                    return "Same score";
+            }
+        } */
+
+
+
+    
+    console.log(getComputerChoice());
+    
+    
+    </script>
+
+
+
+    
+</body>
+</html>
+
