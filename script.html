@@ -35,17 +35,22 @@
 
 
     let playerSelection = prompt ("Rock, Paper, or Scissors? Choose your weapon wisely ^,..,^");
-    playerSelection.toUpperCase;
+    // playerSelection.toUpperCase;
+
+    let playerScore = 0;
+    let computerScore = 0;
+    let s = (playerScore, computerScore);
+    
 
     function playRound(playerSelection, computerSelection) {
 
   if (playerSelection === 'Rock') {
     if (computerSelection === 'Paper') {
-      return 'You Lose! Paper beats Rock';
+      return lose = ('You Lose! Paper beats Rock') + game();
     } else if (computerSelection === 'Scissors') {
-      return 'You Win! Rock beats Scissors';
+      return win = ('You Win! Rock beats Scissors') + game();
     } else {
-      return "It's a tie";
+      return tie = ("It's a tie") + s;
     }
   } else if (playerSelection === 'Paper') {
     if (computerSelection === 'Scissors') {
@@ -72,14 +77,26 @@
 console.log(playRound(playerSelection, computerSelection));
 
 
+  function game() {
+    for (let s = 0; playerScore < 5 || computerScore < 5; playerScore++ || computerScore++ ) {
+      return repeat();
+    return playRound(playerSelection, computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+    }
+  }
+
+  // console.log(playRound(playerSelection, computerSelection));
+
+  function repeat() {
+    if (playerScore < 6 || computerScore < 6) {
+      return playerSelection + console.log(playRound(playerSelection, computerSelection)) + game();
+    } else {
+      console.log ("Game over.");
+    }
+  }
+
 
 </script>
-
-
-
-
-
-
 
 
     
