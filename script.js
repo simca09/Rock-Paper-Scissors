@@ -87,16 +87,33 @@ if (scorePlayer === 5) {
     const pwinner = document.createElement("p")
     pwinner.innerText = "Player was the winner";
     outcomeDiv.appendChild(pwinner)
-    script.stop;
+    endGame();
+    rockButton.setAttribute("disabled", 1);
+    paperButton.setAttribute("disabled", 1);
+    scissorsButton.setAttribute("disabled", 1);
 } else if ( scoreComputer === 5) {
     const pwinner = document.createElement("p")
     pwinner.innerText = "Computer WINSSSS";
     outcomeDiv.appendChild(pwinner)
-    script.stop;
+    endGame();
+    rockButton.setAttribute("disabled", 1);
+    paperButton.setAttribute("disabled", 1);
+    scissorsButton.setAttribute("disabled", 1);
 } else {
     return
 }
 }
+
+function endGame() {
+    // reset both score to 0
+    scorePlayer = 0;
+    scoreComputer = 0;
+  
+    // reenable all the RPS buttons so that user can continue to play
+    rockButton.removeAttribute("disabled");
+    paperButton.removeAttribute("disabled");
+    scissorsButton.removeAttribute("disabled");
+  }
 
  
 rockButton.addEventListener("click", () => {
