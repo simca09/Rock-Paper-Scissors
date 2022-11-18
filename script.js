@@ -58,55 +58,29 @@ function rockPlayerSelection() {
 }
 
 
-
+let scorePlayer = 0;
+let scoreComputer = 0;
 
 
 function round(getPlayerChoice, compChoice) {
     const result = winner(getPlayerChoice, compChoice);
     if (result == "Tie!!!") {
         const p = document.createElement("p")
-        p.innerText = "It's a tie!"
+        p.innerText = "It's a tie!" + "\n" + "Player Score: " + scorePlayer + " Computer Score: " + scoreComputer;
         outcomeDiv.appendChild(p)
     } else if (result == "Player") {
         const p = document.createElement("p")
-        p.innerText = `You win! ${getPlayerChoice} beats ${compChoice}`
+        scorePlayer++;
+        p.innerText = `You win! ${getPlayerChoice} beats ${compChoice}`+ "\n" + "Player Score: " + scorePlayer + " Computer Score: " + scoreComputer;
         outcomeDiv.appendChild(p)
     } else {
         const p = document.createElement("p")
-        p.innerText = `You lose! ${compChoice} beats ${getPlayerChoice}`
+        scoreComputer++;
+        p.innerText = `You lose! ${compChoice} beats ${getPlayerChoice}`+ "\n" + "Player Score: " + scorePlayer + " Computer Score: " + scoreComputer;
         outcomeDiv.appendChild(p)
     }
 }
 
-
-
-
-function game() {
-    let scorePlayer = 0;
-    let scoreComputer = 0;
-    console.log("Welcome you scrub");
-    // for(let i = 0; i < 5; i++) {
-        // getPlayerChoice = prompt("Rock, Paper, or Scissors? Choose wisely! It's case-sensitive");
-        // const getPlayerChoice = onclick;
-        // compChoice = getComputerChoice();
-        console.log(round(getPlayerChoice, compChoice));
-        console.log("===================================");
-        if (winner(getPlayerChoice, compChoice) == "Player") {
-            scorePlayer++;
-        } else if (winner(getPlayerChoice, compChoice) == "Computer") {
-            scoreComputer++;
-        }
-    // }
-    console.log ("Game Over Suckas");
-    if (scorePlayer > scoreComputer) {
-        console.log("Player was the winner");
-    }
-    else if ( scoreComputer > scorePlayer) {
-        console.log("Computer WINSSSS");
-    } else {
-        console.log("Boringggg, We have a tie....");
-    }
-}
 
  
 rockButton.addEventListener("click", () => {
@@ -126,3 +100,31 @@ scissorsButton.addEventListener("click", () => {
     const getPlayerChoice = "scissors";
     round(getPlayerChoice, compChoice)
 });
+
+/*function game(getPlayerChoice, compChoice) {
+    let scorePlayer = 0;
+    let scoreComputer = 0;
+    console.log("Welcome you scrub");
+    // for(let i = 0; i < 5; i++) {
+        // getPlayerChoice = prompt("Rock, Paper, or Scissors? Choose wisely! It's case-sensitive");
+        // const getPlayerChoice = onclick;
+        // compChoice = getComputerChoice();
+        console.log(round(getPlayerChoice, compChoice));
+        console.log("===================================");
+        if (winner(getPlayerChoice, compChoice) == "Player") {
+            scorePlayer++;
+        } else if (winner(getPlayerChoice, compChoice) == "Computer") {
+            scoreComputer++;
+        };
+    console.log ("Game Over Suckas");
+    if (scorePlayer > scoreComputer) {
+        console.log("Player was the winner");
+    }
+    else if ( scoreComputer > scorePlayer) {
+        console.log("Computer WINSSSS");
+    } else {
+        console.log("Boringggg, We have a tie....");
+    }
+}
+
+game(); */
