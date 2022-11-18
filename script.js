@@ -79,8 +79,24 @@ function round(getPlayerChoice, compChoice) {
         p.innerText = `You lose! ${compChoice} beats ${getPlayerChoice}`+ "\n" + "Player Score: " + scorePlayer + " Computer Score: " + scoreComputer;
         outcomeDiv.appendChild(p)
     }
+    end ();
 }
 
+function end () { 
+if (scorePlayer === 5) {
+    const pwinner = document.createElement("p")
+    pwinner.innerText = "Player was the winner";
+    outcomeDiv.appendChild(pwinner)
+    script.stop;
+} else if ( scoreComputer === 5) {
+    const pwinner = document.createElement("p")
+    pwinner.innerText = "Computer WINSSSS";
+    outcomeDiv.appendChild(pwinner)
+    script.stop;
+} else {
+    return
+}
+}
 
  
 rockButton.addEventListener("click", () => {
