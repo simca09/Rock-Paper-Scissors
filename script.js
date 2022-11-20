@@ -87,7 +87,6 @@ if (scorePlayer === 5) {
     const pwinner = document.createElement("p")
     pwinner.innerText = "Player was the winner";
     outcomeDiv.appendChild(pwinner)
-    endGame();
     rockButton.setAttribute("disabled", 1);
     paperButton.setAttribute("disabled", 1);
     scissorsButton.setAttribute("disabled", 1);
@@ -95,7 +94,6 @@ if (scorePlayer === 5) {
     const pwinner = document.createElement("p")
     pwinner.innerText = "Computer WINSSSS";
     outcomeDiv.appendChild(pwinner)
-    endGame();
     rockButton.setAttribute("disabled", 1);
     paperButton.setAttribute("disabled", 1);
     scissorsButton.setAttribute("disabled", 1);
@@ -113,6 +111,7 @@ function endGame() {
     rockButton.removeAttribute("disabled");
     paperButton.removeAttribute("disabled");
     scissorsButton.removeAttribute("disabled");
+    round(getPlayerChoice, compChoice);
   }
 
  
